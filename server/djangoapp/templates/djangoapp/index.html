@@ -14,12 +14,46 @@
 </head>
 
     <body>
-    <!-- Remove this line the first time you edit this file -->
-     This is the index page of your Django app!
+        {% include 'Navbar.html' %}
+        
+        
     <!--Add a nav bar here -->
-
+    <div class="container">
+        <table class="table table-striped" id="table" data-filter-control="true" style="margin-top: 4%; margin-bottom: 4%;">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Dealer Name</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Zip</th>
+                    <th data-field="state" data-filter-control="select">State</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for dealer in dealerships%}
+                    <tr>
+                        <td style="padding: 3%;">{{dealer.id}}</td>
+                        <td style="padding: 3%;"><a href="{% url 'djangoapp:dealer_details' dealer.id %}">{{dealer.full_name}}</a></td>
+                        <td style="padding: 3%;">{{dealer.city}}</td>
+                        <td style="padding: 3%;">{{dealer.address}}</td>
+                        <td style="padding: 3%;">{{dealer.zip}}</td>
+                        <td style="padding: 3%;">{{dealer.st}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        
     <!--Add a dealer table here -->
 
+    <script>
+        $(function() {
+            $('#table').bootstrapTable()
+        })
+    </script>
+                
     </body>
 
 </html>
