@@ -1,7 +1,7 @@
   applications:
   - name: djangoapp
     routes:
-      - route: thebestcarsdjangoapp.us-south.cf.appdomain.cloud
+      - route: theverybestcarsdjangoapp.us-south.cf.appdomain.cloud
     memory: 128M
     buildpack: python_buildpack
   - name: djangoapp-nginx
