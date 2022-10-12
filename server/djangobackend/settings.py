@@ -27,7 +27,7 @@ DEBUG = True
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ["thebestcarsdjangoapp.us-south.cf.appdomain.cloud", "theverybestcarsdjangoapp.us-south.cf.appdomain.cloud",""verybestcarsdjangoapp.us-south.cf.appdomain.cloud","localhost"]
+ALLOWED_HOSTS = ["verybestcarsdjangoapp.us-south.cf.appdomain.cloud","localhost"]
 
 
 # Application definition
