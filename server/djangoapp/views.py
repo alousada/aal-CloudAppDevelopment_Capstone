@@ -94,7 +94,7 @@ def registration_request(request):
 def get_dealerships(request):
     context = {}
     if request.method == "GET":
-        url = 'https://5b93346d.us-south.apigw.appdomain.cloud/dealerships/dealer-get'
+        url = 'https://us-south.functions.cloud.ibm.com/api/v1/namespaces/ea5f94da-d2c3-4eab-9a2e-624cd194e78b/actions/DjangoApp/get-dealerships.js'
         # Get dealers from the URL
         context = {"dealerships": restapis.get_dealers_from_cf(url)}
         # Concat all dealer's short name
