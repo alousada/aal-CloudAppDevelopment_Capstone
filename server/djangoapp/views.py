@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import render
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, render, redirect
 # from .models import related models
@@ -9,6 +11,8 @@ from django.contrib import messages
 from datetime import datetime
 import logging
 import json
+from . import restapis
+from . import models
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -94,7 +98,7 @@ def registration_request(request):
 def get_dealerships(request):
     context = {}
     if request.method == "GET":
-        url = 'https://us-south.functions.cloud.ibm.com/api/v1/namespaces/ea5f94da-d2c3-4eab-9a2e-624cd194e78b/actions/DjangoApp/get-dealerships.js'
+        url = 'https://5b93346d.us-south.apigw.appdomain.cloud/dealerships/dealer-get'
         # Get dealers from the URL
         context = {"dealerships": restapis.get_dealers_from_cf(url)}
         # Concat all dealer's short name
